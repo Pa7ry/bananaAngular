@@ -1,0 +1,200 @@
+html, body {
+    background: palegoldenrod;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 'sidebar navbar navbar navbar navbar navbar navbar'
+                            /*'sidebar navbar navbar navbar navbar navbar navbar'*/ 
+                            'sidebar main main main main main main'
+                            'sidebar main main main main main main'
+                            'sidebar main main main main main main'
+                            'sidebar main main main main main main'
+                            'sidebar main main main main main main'
+                            'sidebar main main main main main main'
+                            'sidebar main main main main main main'
+                            'sidebar main main main main main main';
+}
+
+.navbar {
+    grid-area: navbar;
+    background: rgb(223, 211, 88);
+    border: lightslategray 1px solid;
+    text-align: center;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr 1fr 8fr 1fr 1fr; 
+    grid-gap: 10px;
+}
+
+.buscar {
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;
+    background: whitesmoke;
+    border: lightslategray 1px solid;
+    grid-gap: 10px;
+    min-height: 20px;
+}
+
+.inicio {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+    background: rgb(227, 235, 153);
+    border: lightslategray 1px solid;
+    min-height: 20px;
+}
+
+
+.sidebar {
+    background: rgb(150, 146, 105);
+    grid-area: sidebar;
+    border: lightslategray 1px solid;
+    display: grid;
+    grid-template-areas: 'footer';
+    text-align: center;
+    grid-template-rows: repeat(20, 1fr);
+    grid-gap: 21px; 
+}
+
+.logo {
+    background: lightgray;
+    border: lightslategray 1px solid;
+    grid-row: 1 / 4;
+    text-align: center;
+}
+
+.footer {
+    background: lightgray;
+    border: lightslategray 1px solid;
+    grid-row: 20 / -1;
+    text-align: center;
+}
+
+.main {
+    grid-area: main;
+    /*padding: 5%;*/
+    border: lightslategray 1px solid;
+    overflow: auto;
+    display: grid;
+    grid-template: 1fr repeat(2, 5fr) / repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 50px;
+    padding-top: 35px;
+    padding-bottom: 85px;
+    text-align: center;
+}
+
+.video {
+    background: lightgray;
+    border: lightslategray 1px solid;
+    text-align: center;
+    height: 100%;
+    margin: 5px;
+}
+
+.seccion {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: 100vh;
+        display: grid;
+        grid-template-areas: ' navbar navbar navbar navbar navbar navbar'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main';
+    }
+
+    .navbar {
+        grid-area: navbar;
+        background: rgb(223, 211, 88);
+        border: lightslategray 1px solid;
+        text-align: center;
+        display: grid;
+        grid-template: repeat(3, 10px) / 1fr 1fr 8fr 1fr 1fr; 
+        grid-gap: 10px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        grid-area: main;
+        border: lightslategray 1px solid;
+        overflow: auto;
+        display: grid;
+        grid-template: 1fr repeat(3, 4fr) / repeat(2, 1fr);
+        grid-gap: 50px;
+        padding: 50px;
+        padding-bottom: 80px;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    .video {
+        background: lightgray;
+        border: lightslategray 1px solid;
+        text-align: center;
+        min-height: 125px;;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        height: 100vh;
+        display: grid;
+        grid-template-areas: ' navbar navbar navbar navbar navbar navbar'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main'
+                                ' main main main main main main';
+    }
+
+    .navbar {
+        grid-area: navbar;
+        background: rgb(223, 211, 88);
+        border: lightslategray 1px solid;
+        text-align: center;
+        display: grid;
+        grid-template: repeat(3, 10px) / 1fr 1fr 8fr 1fr 1fr; 
+        grid-gap: 10px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        grid-area: main;
+        border: lightslategray 1px solid;
+        overflow: auto;
+        display: grid;
+        grid-template: 1fr repeat(2, 4fr) /1fr;
+        grid-gap: 20px;
+        padding: 50px;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+    .video {
+        background: lightgray;
+        border: lightslategray 1px solid;
+        text-align: center;
+        min-height: 120px;;
+        margin: 2px;
+    }
+}
