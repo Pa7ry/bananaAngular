@@ -1,44 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Bienvenidos a {{ title }}!
   </h1>
 </div>
-<div>
-  <label>ID: {{usuario.id}}</label><br/>
-  <label>Nombre: {{usuario.name}}</label><br/>
-  <label>Tipo: {{usuario.tipo}}</label><br/>
-  <label>TLF: {{usuario.tlf}}</label><br/>
-  <label>Email: {{usuario.email}}</label><br/>
-</div>
+
 <div class="container">
-  <h1>Usuario Form</h1>
+  <h1>Registro de Usuario</h1>
   <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
     <input type="hidden" class="" id="id" required [(ngModel)]="usuario.id" name="id">
     <div class="form-group">
-      <label for="name">Name</label>
-      <input #name="ngModel" type="text" class="form-control" id="name" required [(ngModel)]="usuario.name" name="name" minlength="4" appForbiddenName="bob">
+      <label for="name">Nombre y Apellidos</label>
+      <input #name="ngModel" type="text" class="form-control" id="name" required [(ngModel)]="usuario.name" name="name" minlength="3">
       <div *ngIf="name.invalid && (name.dirty || name.touched)"
            class="alert alert-danger">
 
         <div *ngIf="name.errors.required">
-          El nombre es obligatorio
+          Nombre obligatorio
         </div>
         <div *ngIf="name.errors.minlength">
-          El nombre debe tener al menos 4 caracteres
+          Al menos 3 caracteres
         </div>
-        <div *ngIf="name.errors.forbiddenName">
-          Bob es un nombre prohibido
-        </div>
-
+        
       </div>
     </div>
-    <div class="form-group">
-      <label for="tipo">Tipo de usuario</label>
-      <select #tipo="ngModel" class="form-control" id="tipo" required [(ngModel)]="usuario.tipo" name="tipo">
-        <option *ngFor="let nombre_tipo of tipos_usuario" [value]="nombre_tipo">{{nombre_tipo}}</option>
-      </select>
-    </div>
+    
     <div class="form-group">
       <label for="email">Email</label>
       <input #email="ngModel" type="email" class="form-control"
@@ -48,24 +34,89 @@
            class="alert alert-danger">
 
         <div *ngIf="email.errors.required">
-          El email es obligatorio
+         Email oligatorio
         </div>
         <div *ngIf="email.errors?.pattern">
-          El email debe ser válido
+          Email inválido
         </div>
 
       </div>
+    </div>
+   <div class="form-group">
+      <label for="email2">Repetir Email</label>
+      <input #email2="ngModel" type="email" class="form-control"
+             id="email2" required="required" [(ngModel)]="usuario.email2"
+             name="email2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+      <div *ngIf="email2.invalid && (email2.dirty || email2.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="email2.errors.required">
+         Email oligatorio
+        </div>
+        <div *ngIf="email2.errors?.pattern">
+          Email inválido
+        </div>
+
+      </div>
+    </div>
+    
+     <div class="form-group">
+      <label for="pass">Contraseña</label>
+      <input #pass="ngModel" type="password" class="form-control"
+             id="pass" required="required" [(ngModel)]="usuario.pass"
+             name="pass" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" minlength="8" />
+      <div *ngIf="pass.invalid && (pass.dirty || pass.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="pass.errors.required">
+         Contraseña obligatoria
+        </div>
+        <div *ngIf="pass.errors.minlength">
+          Al menos 8 caracteres
+        </div>
+        <div *ngIf="pass.errors?.pattern">
+          Contraseña inválida
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="pass2">Repetir Contraseña</label>
+      <input #pass2="ngModel" type="password" class="form-control"
+             id="pass2" required="required" [(ngModel)]="usuario.pass2"
+             name="pass2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" minlength="8" />
+      <div *ngIf="pass2.invalid && (pass2.dirty || pass2.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="pass2.errors.required">
+         Contraseña obligatoria
+        </div>
+        <div *ngIf="pass.errors.minlength">
+          Al menos 8 caracteres
+        </div>
+        <div *ngIf="pass2.errors?.pattern">
+          Contraseña inválida
+        </div>
+
+      </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="provincia">Provincia</label>
+      <select #provincia="ngModel" class="form-control" id="provincia" required [(ngModel)]="usuario.provincia" name="provincia">
+        <option *ngFor="let nombre_provincia of provincia_usuario" [value]="nombre_provincia">{{nombre_provincia}}</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="tlf">Teléfono</label>
       <input #tlf="ngModel" type="tel" class="form-control" id="tlf"
              [(ngModel)]="usuario.tlf" name="tlf"/>
     </div>
-
-    <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">Submit</button>
+          
+    <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">Enviar</button>
 
   </form>
-  <div>
-    {{usuario | json}}
-  </div>
+ 
 </div>

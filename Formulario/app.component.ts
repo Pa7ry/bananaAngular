@@ -7,14 +7,13 @@ import {Usuario} from "./usuario"
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'BananaTube';
   usuario:Usuario;
-  tipos_usuario=['Admin', 'Invitado',
-    'Normal'];
+  provincia_usuario=['Álaba','Albacete','Alicante','Almería', 'Ávila','Badajoz','Barcelona','Burgos','Cáceres','Cádiz','Cantabria','Castellón','Ciudad Real','Córdoba','Cuenca','Gerona','Granada','Guadalajara','Guipúzkoa', 'Huelva','Huesca','Islas Baleares','Jaén','La Coruña','La Rioja','Las Palmas','León', 'Lérida','Lugo','Madrid','Málaga', 'Murcia', 'Navarra','Orense', 'Palencia','Pontevedra','Salamanca','Segovia','Sevilla','Soria','Tarragona','Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya','Zamora','Zaragoza'];
   submitted = false;
 
   constructor() {
-    this.usuario=new Usuario(12,"Pepe","Admin","p@p.com","912345678");
+    this.usuario=new Usuario(0,"","","","","","","");
   }
   ngOnInit() {
   }

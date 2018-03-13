@@ -4,6 +4,9 @@ export class Usuario {
     public name: string,
     public tipo: string,
     public email: string,
-    public tlf?: string
-  ) {  }
+    public email2: string,
+    public tlf?: string,
+    public pass: string,
+    public pass2: string
+    ) {  }
 }
