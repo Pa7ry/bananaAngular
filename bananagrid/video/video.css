@@ -9,7 +9,6 @@ html, body {
     height: 40vh;
     display: grid;
     grid-template-areas: 'sidebar navbar navbar navbar navbar navbar navbar'
-                            /*'sidebar navbar navbar navbar navbar navbar navbar'*/ 
                             'sidebar main main main main main main'
                             'sidebar main main main main main main'
                             'sidebar main main main main main main'
@@ -82,45 +81,63 @@ html, body {
     grid-template: repeat(10, 1fr) / repeat(6, 2fr);
     grid-gap: 30px;
     padding: 50px;
-    padding-top: 35px;
-    padding-bottom: 100px;
     text-align: center;
 }
 
-.seccion {
-    grid-column: 2 / 6;
-    grid-row: 1 / 2;
+.video {
+    background: lightslategray;
+    border: lightslategray 1px solid;
+    grid-row: 1 / 7;
+    grid-column: 1 / 5;
 }
 
-.text {
-    grid-column: 2 / 6;
-    background: whitesmoke;
-    min-height: 20px;
-    padding: 4px;
+.info {
+    background: lightslategray;
+    border: lightslategray 1px solid;
+    grid-row: 7 / 8;
+    grid-column: 1 / 4;
 }
 
-.foto {
-    grid-column: 2 / 3;
-    background: lightgray;
-    min-height: 80px;;
+.votar {
+    grid-row: 7 / 8;
+    grid-column: 4 / 5;
+    background: lightslategray;
     border: lightslategray 1px solid;
 }
 
-.subeFoto {
-    grid-column: 3 / 4;
-    background: rgb(227, 235, 153);
-    max-height: 20px;
-    border: lightslategray 1px solid;
-    position: relative;
+.sugerencias {
+    grid-row: 8 / -1;
+    grid-column: 1 / 5;
+    background: rgb(188, 189, 190);
+    border: black 1px solid;
+    display: grid;
+    overflow: auto;
+    grid-gap: 20px;
+    padding: 5px;
+    padding-bottom: 20px;
+    grid-template: repeat(3, 130px) / repeat(2, 1fr);
 }
 
-.enviar {
-    grid-column: 3 / 5;
-    grid-row: 10 / 11;
-    background: rgb(227, 235, 153);
-    min-height: 20px;
-    border: lightslategray 1px solid;
+.sug {
+    background: lightslategray;
+    border: black 1px solid;
+}
 
+.comentarios{
+    grid-row: 1 / -1;
+    grid-column: 5 / 7;
+    background: rgb(188, 189, 190);
+    border: lightslategray 1px solid;
+    display: grid;
+    overflow: auto;
+    grid-gap: 10px;
+    padding: 5px;
+    grid-template-rows: repeat(6, 150px);
+}
+
+.coment {
+    background: lightslategray;
+    border: black 1px solid;
 }
 
 @media (max-width: 768px) {
@@ -145,26 +162,34 @@ html, body {
     .main {
         grid-template: repeat(10, 1fr) / repeat(6, 2fr);
         grid-gap: 20px;
+        padding: 25px;
     }
 
-    .text {
-        grid-column: 1 / 7;
-    }
-
-    .foto {
-        grid-column: 1 / 2;
-        background: lightgray;
-        min-height: 80px;;
-        border: lightslategray 1px solid;
+    .video {
+        grid-row: 1 / 6;
+        grid-column: 1 / 5;
     }
     
-    .subeFoto {
-        grid-column: 2 / 3;
+    .info {
+        grid-row: 6 / 7;
+        grid-column: 1 / 4;
     }
     
-    .enviar {
-        grid-column: 3 / 5;
+    .votar {
+        grid-row: 6 / 7;
+        grid-column: 4 / 5;
     }
+    
+    .sugerencias {
+        grid-row: 7 / -1;
+        grid-column: 1 / -1;
+        grid-template: repeat(2, 80px) / repeat(3, 200px);
+        padding-left: 20px;
+    }
+    
+    .comentarios{
+        grid-row: 1 / 7;
+        grid-column: 5 / -1;
 }
 
 @media (max-width: 600px) {
@@ -189,24 +214,33 @@ html, body {
     .main {
         grid-template: repeat(10, 1fr) / repeat(6, 2fr);
         grid-gap: 20px;
+        padding: 25px;
     }
 
-    .text {
-        grid-column: 1 / 7;
-    }
-
-    .foto {
-        grid-column: 1 / 3;
-        background: lightgray;
-        min-height: 80px;;
-        border: lightslategray 1px solid;
+    .video {
+        grid-row: 1 / 5;
+        grid-column: 1 / -1;
     }
     
-    .subeFoto {
-        grid-column: 3 / 5;
+    .info {
+        grid-row: 5 / 6;
+        grid-column: 1 / 6;
     }
     
-    .enviar {
-        grid-column: 2 / 6;
+    .votar {
+        grid-row: 5 / 6;
+        grid-column: 6 / 7;
+    }
+    
+    .sugerencias {
+        grid-row: 8 / -1;
+        grid-column: 1 / -1;
+        grid-template: repeat(3, 100px) / repeat(2, 1fr);
+        padding-left: 5px;
+    }
+    
+    .comentarios{
+        grid-row: 6 / 8;
+        grid-column: 1 / -1;
     }
 }
